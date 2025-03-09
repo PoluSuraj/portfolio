@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suraj-Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    :where([class^="ri-"])::before { content: "\f3c2"; }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+    .floating { animation: float 6s ease-in-out infinite; }
+    .gradient-text {
+      background: linear-gradient(45deg, #4F46E5, #A855F7);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    @keyframes navIconPop {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    nav a:hover i {
+      animation: navIconPop 0.3s ease-in-out;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4F46E5',
+            secondary: '#A855F7'
+          },
+          borderRadius: {
+            'none': '0px',
+            'sm': '8px',
+            DEFAULT: '12px',
+            'md': '16px',
+            'lg': '20px',
+            'xl': '24px',
+            '2xl': '28px',
+            '3xl': '32px',
+            'full': '9999px',
+            'button': '12px'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen">
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 bg-gray-900/70 backdrop-blur-lg border-b border-gray-800 z-50">
+    <div class="container mx-auto px-6">
+      <div class="flex items-center justify-between h-16">
+        <a href="#" class="text-2xl font-['Pacifico'] gradient-text">सूRजkumar</a>
+        <div class="hidden md:flex items-center space-x-8 relative">
+          <div id="nav-indicator" class="absolute bottom-0 h-0.5 bg-primary transition-all duration-300"></div>
+          <!-- <a href="#about" class="nav-link py-5 px-2 text-sm font-medium hover:text-primary hover:scale-110 transition-all">About</a> -->
+          <!-- <a href="#projects" class="nav-link py-5 px-2 text-sm font-medium hover:text-primary hover:scale-110 transition-all">Projects</a> -->
+          <a href="#skills-in" class="nav-link py-5 px-2 text-sm font-medium hover:text-primary hover:scale-110 transition-all">Skills</a>
+          <a href="#contact" class="nav-link py-5 px-2 text-sm font-medium hover:text-primary hover:scale-110 transition-all">Contact</a>
+          <a href="https://github.com/PoluSuraj/resume/raw/main/Resume.pdf">
+            <button class="!rounded-button bg-primary hover:bg-primary/90 px-6 py-3 text-base font-medium transition-all duration-300 hover:scale-105 cursor-pointer ml-4">Resume</button>
+          </a>
+        </div>
+        <button id="mobile-menu-button" class="md:hidden w-10 h-10 flex items-center justify-center">
+          <div class="w-6 h-5 relative flex flex-col justify-between">
+            <span class="w-full h-0.5 bg-white rounded-full transform transition-all duration-300 origin-left"></span>
+            <span class="w-full h-0.5 bg-white rounded-full transform transition-all duration-300"></span>
+            <span class="w-full h-0.5 bg-white rounded-full transform transition-all duration-300 origin-left"></span>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden bg-gray-900/95 backdrop-blur-lg transform -translate-y-full transition-transform duration-300 absolute top-16 left-0 w-full">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex flex-col space-y-4">
+          <!-- <a href="#about" class="text-sm font-medium hover:text-primary transition-colors">About</a> -->
+          <!-- <a href="#projects" class="text-sm font-medium hover:text-primary transition-colors">Projects</a> -->
+          <a href="#skills-in" class="text-sm font-medium hover:text-primary transition-colors">Skills</a>
+          <a href="#contact" class="text-sm font-medium hover:text-primary transition-colors">Contact</a>
+          <button class="!rounded-button bg-primary hover:bg-primary/90 px-4 py-2 text-sm font-medium transition-colors cursor-pointer mt-2">Check Resume</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="min-h-screen flex items-center relative overflow-hidden pt-20">
+    <div class="absolute inset-0">
+      <img src="https://public.readdy.ai/ai/img_res/0d6c247cd6a31d13d5ea0ba505ff88ee.jpg" class="w-full h-full object-cover opacity-20" alt="Background">
+    </div>
+    <div class="container mx-auto px-6 relative z-10 ml-16">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-8">
+          <h1 class="text-5xl md:text-7xl font-bold gradient-text">
+            <script>
+              const now = new Date();
+              const hour = now.getHours();
+              let greeting;
+              if (hour < 12) greeting = "Good Morning!";
+              else if (hour < 18) greeting = "Good Afternoon!";
+              else greeting = "Good Evening!";
+              document.write("<p>" + greeting + "</p>");
+            </script>
+            <br>
+            <div>Hi I'am<br>Suraj Kumar</div>
+            <br>
+          </h1>
+          <h2 class="text-2xl font-['Space_Mono'] text-gray-400">Web Developer</h2>
+          <p class="text-lg text-gray-300 leading-relaxed">
+            I aim to build innovative web solutions, optimizing user flow and exploring emerging technologies. I will leave a tangible contribution to your team's digital landscape.
+          </p>
+          <div class="flex space-x-6">
+            <a href="mailto:surajsinghania142@gmail.com">
+              <button class="!rounded-button bg-primary hover:bg-primary/90 px-10 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105 cursor-pointer">Hire Me</button>
+            </a>
+          </div>
+        </div>
+        <div class="floating">
+          <img src="https://ugc.production.linktr.ee/58adf6a0-988a-4d3d-963d-9294676970c0_1000000158.jpeg?io=true&size=avatar-v3_0" alt="Suraj Kumar" class="w-full rounded-2xl shadow-2xl">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section
+  <section id="projects" class="py-20 bg-gray-800">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Featured Projects</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-gray-900 rounded-xl p-6 hover:transform hover:scale-105 transition-transform duration-300">
+          <img src="https://public.readdy.ai/ai/img_res/09309ec5760b09ae243fd4c4e303849b.jpg" alt="AI Assistant" class="rounded-lg mb-6 w-full">
+          <h3 class="text-2xl font-bold mb-4">AI Assistant</h3>
+          <p class="text-gray-400 mb-4">An intelligent chatbot platform powered by advanced NLP for seamless customer support automation.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Python</span>
+            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">TensorFlow</span>
+            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">FastAPI</span>
+          </div>
+          <div class="flex space-x-4">
+            <a href="#" class="!rounded-button flex items-center space-x-2 bg-primary/20 hover:bg-primary/30 px-4 py-2 text-sm font-medium transition-colors">
+              <i class="ri-play-circle-line"></i>
+              <span>Live Demo</span>
+            </a>
+            <a href="#" class="!rounded-button flex items-center space-x-2 bg-gray-800 hover:bg-gray-700 px-4 py-2 text-sm font-medium transition-colors">
+              <i class="ri-github-line"></i>
+              <span>View Code</span>
+            </a>
+          </div>
+        </div>
+        <div class="bg-gray-900 rounded-xl p-6 hover:transform hover:scale-105 transition-transform duration-300">
+          <img src="https://public.readdy.ai/ai/img_res/d2f5f5af73be60816767b18587b7d065.jpg" alt="Fitness Tracker" class="rounded-lg mb-6 w-full">
+          <h3 class="text-2xl font-bold mb-4">Fitness Tracker</h3>
+          <p class="text-gray-400 mb-4">A comprehensive fitness tracking application with real-time analytics and personalized workout plans.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Flutter</span>
+            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Firebase</span>
+            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">GraphQL</span>
+          </div>
+          <div class="flex space-x-4">
+            <a href="#" class="!rounded-button flex items-center space-x-2 bg-primary/20 hover:bg-primary/30 px-4 py-2 text-sm font-medium transition-colors">
+              <i class="ri-play-circle-line"></i>
+              <span>Live Demo</span>
+            </a>
+            <a href="#" class="!rounded-button flex items-center space-x-2 bg-gray-800 hover:bg-gray-700 px-4 py-2 text-sm font-medium transition-colors">
+              <i class="ri-github-line"></i>
+              <span>View Code</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Skills Section -->
+  <section id="skills-in" class="py-20 bg-gray-900">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Skills</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gray-900 rounded-xl p-6 hover:bg-gray-900/80 transition-colors duration-300">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-lg font-semibold">HTML</span>
+            <img src="https://public.readdy.ai/ai/img_res/f06e7f4ce18d8f2824981e5790e30558.jpg" alt="HTML" class="w-8 h-8 rounded">
+          </div>
+          <div class="relative h-2 bg-gray-700 rounded-full overflow-hidden cursor-pointer group" data-percentage="85">
+            <div class="absolute inset-y-0 left-0 bg-primary transition-all duration-300" style="width: 85%"></div>
+            <div class="opacity-0 group-hover:opacity-100 absolute -top-8 right-0 bg-gray-900 text-primary px-2 py-1 rounded text-sm transition-opacity">85%</div>
+          </div>
+          <div class="flex justify-between mt-2">
+            <span class="text-xs text-gray-400">Beginner</span>
+            <span class="text-xs text-gray-400">Advanced</span>
+            <span class="text-xs text-gray-400">Expert</span>
+          </div>
+        </div>
+        
+<div class="bg-gray-900 rounded-xl p-6 hover:bg-gray-900/80 transition-colors duration-300">
+    <div class="flex items-center justify-between mb-4">
+        <span class="text-lg font-semibold">CSS</span>
+        <img src="https://public.readdy.ai/ai/img_res/7a38e9ef8b81cb86f1734a9d46dc76c5.jpg" alt="CSS" class="w-8 h-8 rounded">
+    </div>
+    <div class="relative h-2 bg-gray-700 rounded-full overflow-hidden cursor-pointer group" data-percentage="80">
+        <div class="absolute inset-y-0 left-0 bg-primary transition-all duration-300" style="width: 70%"></div>
+        <div class="opacity-0 group-hover:opacity-100 absolute -top-8 right-0 bg-gray-900 text-primary px-2 py-1 rounded text-sm transition-opacity">80%</div>
+    </div>
+    <div class="flex justify-between mt-2">
+        <span class="text-xs text-gray-400">Beginner</span>
+        <span class="text-xs text-gray-400">Advanced</span>
+        <span class="text-xs text-gray-400">Expert</span>
+    </div>
+    <p class="mt-4 text-gray-400 text-sm"></p>
+</div>
+<div class="bg-gray-900 rounded-xl p-6 hover:bg-gray-900/80 transition-colors duration-300">
+    <div class="flex items-center justify-between mb-4">
+        <span class="text-lg font-semibold">JavaScript</span>
+        <img src="https://public.readdy.ai/ai/img_res/48eb8d0906c4036e9b414eca9ca6c0e7.jpg" alt="JavaScript" class="w-8 h-8 rounded">
+    </div>
+    <div class="relative h-2 bg-gray-700 rounded-full overflow-hidden cursor-pointer group" data-percentage="75">
+        <div class="absolute inset-y-0 left-0 bg-primary transition-all duration-300" style="width: 55%"></div>
+        <div class="opacity-0 group-hover:opacity-100 absolute -top-8 right-0 bg-gray-900 text-primary px-2 py-1 rounded text-sm transition-opacity">75%</div>
+    </div>
+    <div class="flex justify-between mt-2">
+        <span class="text-xs text-gray-400">Beginner</span>
+        <span class="text-xs text-gray-400">Advanced</span>
+        <span class="text-xs text-gray-400">Expert</span>
+    </div>
+    <p class="mt-4 text-gray-400 text-sm"></p>
+</div>
+<div class="bg-gray-900 rounded-xl p-6 hover:bg-gray-900/80 transition-colors duration-300">
+    <div class="flex items-center justify-between mb-4">
+        <span class="text-lg font-semibold">MySQL</span>
+        <img src="https://public.readdy.ai/ai/img_res/4cafcacf389c83dee014ae59a5374dcb.jpg" alt="MySQL" class="w-8 h-8 rounded">
+    </div>
+    <div class="relative h-2 bg-gray-700 rounded-full overflow-hidden cursor-pointer group" data-percentage="85">
+        <div class="absolute inset-y-0 left-0 bg-primary transition-all duration-300" style="width: 40%"></div>
+        <div class="opacity-0 group-hover:opacity-100 absolute -top-8 right-0 bg-gray-900 text-primary px-2 py-1 rounded text-sm transition-opacity">85%</div>
+    </div>
+    <div class="flex justify-between mt-2">
+        <span class="text-xs text-gray-400">Beginner</span>
+        <span class="text-xs text-gray-400">Advanced</span>
+        <span class="text-xs text-gray-400">Expert</span>
+    </div>
+    <p class="mt-4 text-gray-400 text-sm"></p>
+</div>
+<div class="bg-gray-900 rounded-xl p-6 hover:bg-gray-900/80 transition-colors duration-300">
+<div class="flex items-center justify-between mb-4">
+<span class="text-lg font-semibold">Python</span>
+<img src="https://public.readdy.ai/ai/img_res/ba2e9d108eaea009d66c3a30a28294e0.jpg" alt="Python" class="w-8 h-8 rounded">
+</div>
+<div class="relative h-2 bg-gray-700 rounded-full overflow-hidden cursor-pointer group" data-percentage="50">
+<div class="absolute inset-y-0 left-0 bg-primary transition-all duration-300" style="width: 30%"></div>
+<div class="opacity-0 group-hover:opacity-100 absolute -top-8 right-0 bg-gray-900 text-primary px-2 py-1 rounded text-sm transition-opacity">90%</div>
+</div>
+<div class="flex justify-between mt-2">
+<span class="text-xs text-gray-400">Beginner</span>
+<span class="text-xs text-gray-400">Advanced</span>
+<span class="text-xs text-gray-400">Expert</span>
+</div>
+<p class="mt-4 text-gray-400 text-sm"></p>
+</div>
+        <!-- Add more skills here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gray-900">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Get in Touch</h2>
+      <div class="grid md:grid-cols-5 gap-8 items-center">
+        <a href="mailto:surajsinghania142@gmail.com" target="_blank" class="w-12 h-12 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors cursor-pointer">
+          <i class="ri-mail-line text-xl"></i>
+        
+        </a>
+        <a href="http://bit.ly/polusuraj" target="_blank" class="w-12 h-12 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors cursor-pointer">
+          <i class="ri-link text-xl"></i> 
+          
+        </a>
+        <a href="https://www.linkedin.com/in/suraj-kumar-10818022b" target="_blank" class="w-12 h-12 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors cursor-pointer">
+          <i class="ri-linkedin-line text-xl"></i>
+         
+        </a>
+        <a href="https://instagram.com/polu_suraj?igshid=OGQ5ZDc2ODk2ZA==" target="_blank" class="w-12 h-12 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors cursor-pointer">
+          <i class="ri-instagram-line text-xl"></i>
+        </a>
+        <a href="https://github.com/PoluSuraj" target="_blank" class="w-12 h-12 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors cursor-pointer">
+            <i class="ri-github-line text-xl"></i>
+        </a>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 border-t border-gray-800 py-8">
+    <div class="container mx-auto px-6 text-center text-gray-400">
+      <p>&copy; 2025 PoluSuraj. All rights reserved.</p>
+      <p id="datetime"></p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Navigation indicator
+    const navLinks = document.querySelectorAll('.nav-link');
+    const indicator = document.getElementById('nav-indicator');
+    function updateIndicator(link) {
+      indicator.style.width = `${link.offsetWidth}px`;
+      indicator.style.left = `${link.offsetLeft}px`;
+    }
+    navLinks.forEach(link => {
+      link.addEventListener('mouseenter', () => updateIndicator(link));
+    });
+
+    // Mobile menu
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuBars = mobileMenuButton.querySelectorAll('span');
+    let isMenuOpen = false;
+    mobileMenuButton.addEventListener('click', () => {
+      isMenuOpen = !isMenuOpen;
+      if (isMenuOpen) {
+        mobileMenu.classList.remove('-translate-y-full');
+        menuBars[0].classList.add('rotate-45');
+        menuBars[1].classList.add('opacity-0');
+        menuBars[2].classList.add('-rotate-45');
+      } else {
+        mobileMenu.classList.add('-translate-y-full');
+        menuBars[0].classList.remove('rotate-45');
+        menuBars[1].classList.remove('opacity-0');
+        menuBars[2].classList.remove('-rotate-45');
+      }
+    });
+
+    // Active state
+    const sections = document.querySelectorAll('section');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= sectionTop - 200) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('text-primary');
+        if (link.getAttribute('href').slice(1) === current) {
+          link.classList.add('text-primary');
+          updateIndicator(link);
+        }
+      });
+    });
+
+    // Initialize indicator position
+    if (navLinks.length > 0) {
+      updateIndicator(navLinks[0]);
+    }
+
+    // Date and Time
+    function displayDateTime() {
+      const now = new Date();
+      const datetimeElement = document.getElementById("datetime");
+      datetimeElement.textContent = now.toLocaleString();
+    }
+    displayDateTime();
+    setInterval(displayDateTime, 1000);
+  </script>
+</body>
+</html>
