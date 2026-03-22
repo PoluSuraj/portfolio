@@ -33,6 +33,9 @@ body {
     linear-gradient(180deg, #091220 0%, #07111f 100%);
   color: var(--text);
   overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -49,6 +52,7 @@ textarea {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 .page-shell {
@@ -81,6 +85,22 @@ img {
 .container {
   width: var(--container);
   margin: 0 auto;
+  min-width: 0;
+}
+
+.hero-copy,
+.hero-visual,
+.about-copy,
+.section-heading,
+.contact-copy,
+.contact-card,
+.project-card,
+.skill-card,
+.cert-card,
+.education-card,
+.meta-card,
+.stat-card {
+  min-width: 0;
 }
 
 .section {
@@ -302,6 +322,7 @@ img {
 .hero-badge {
   display: inline-flex;
   align-items: center;
+  flex-wrap: wrap;
   padding: 9px 16px;
   margin-bottom: 18px;
   border-radius: 999px;
@@ -335,6 +356,10 @@ img {
   flex-wrap: wrap;
   gap: 14px;
   margin: 28px 0 30px;
+}
+
+.hero-actions > * {
+  flex-shrink: 0;
 }
 
 .hero-console {
@@ -890,7 +915,7 @@ img {
   }
 }
 
-@media (max-width: 960px) {
+
   .desktop-nav {
     display: none;
   }
@@ -913,19 +938,63 @@ img {
     grid-template-columns: 1fr;
   }
 
+  .nav-wrap {
+    min-height: 72px;
+    gap: 16px;
+  }
+
+  .brand {
+    font-size: 1.08rem;
+  }
+
+  .hero {
+    padding-top: 12px;
+  }
+
+  .hero-grid {
+    gap: 24px;
+  }
+
+  .hero-copy h1 {
+    max-width: none;
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+
+  .hero-badge {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .hero-text,
+  .hero-subtext {
+    font-size: 0.98rem;
+  }
+
+  .section-heading h2,
+  .contact-copy h2 {
+    font-size: clamp(1.9rem, 6vw, 3rem);
+    line-height: 1.08;
+  }
+
   .hero-visual {
+    order: -1;
     min-height: auto;
-    padding: 16px 0;
+    padding: 8px 0 0;
   }
 
   .photo-halo {
-    inset: 32px 24px;
+    inset: 24px 18px 40px;
+  }
+
+  .photo-frame {
+    width: min(380px, 100%);
+    transform: none;
   }
 
   .floating-card {
     position: static;
     max-width: none;
-    margin-top: 16px;
+    margin-top: 14px;
   }
 
   .footer-wrap {
@@ -935,20 +1004,84 @@ img {
 }
 
 @media (max-width: 640px) {
+  :root {
+    --container: min(100%, calc(100vw - 20px));
+  }
+
   .section {
-    padding: 78px 0;
+    padding: 52px 0;
+    scroll-margin-top: 70px;
+  }
+
+  .site-header {
+    backdrop-filter: blur(16px);
   }
 
   .nav-wrap {
-    min-height: 72px;
+    min-height: 68px;
   }
 
   .nav-actions .button-ghost {
     display: none;
   }
 
+  .mobile-nav {
+    width: calc(100vw - 20px);
+    margin-bottom: 12px;
+  }
+
   .hero-copy h1 {
-    max-width: none;
+    font-size: clamp(1.9rem, 11vw, 3rem);
+    letter-spacing: -0.04em;
+  }
+
+  .hero-badge {
+    padding: 8px 14px;
+    font-size: 0.78rem;
+  }
+
+  .hero-console,
+  .education-card,
+  .project-card,
+  .cert-card,
+  .skill-card,
+  .contact-card,
+  .stat-card,
+  .meta-card,
+  .modal-panel {
+    border-radius: 22px;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .console-grid span,
+  .tag,
+  .project-link,
+  .contact-links a {
+    word-break: break-word;
+  }
+
+  .hero-actions {
+    gap: 12px;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .photo-frame {
+    width: min(100%, 330px);
+    padding: 14px;
+    border-radius: 30px;
+  }
+
+  .photo-frame img {
+    border-radius: 24px;
+  }
+
+  .card-two,
+  .card-one {
+    font-size: 0.95rem;
   }
 
   .project-card,
@@ -959,6 +1092,64 @@ img {
   .stat-card,
   .meta-card {
     border-radius: 22px;
+  }
+
+  .scroll-top {
+    right: 14px;
+    bottom: 14px;
+  }
+}
+
+@media (max-width: 420px) {
+  .brand {
+    font-size: 0.98rem;
+  }
+
+  .menu-toggle {
+    width: 44px;
+    height: 44px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(1.75rem, 12vw, 2.6rem);
+  }
+
+  .section-heading h2,
+  .contact-copy h2 {
+    font-size: clamp(1.65rem, 8vw, 2.3rem);
+  }
+
+  .photo-frame {
+    width: min(100%, 290px);
+  }
+
+  .education-card,
+  .project-card,
+  .cert-card,
+  .skill-card,
+  .contact-card,
+  .stat-card,
+  .meta-card {
+    padding: 18px 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }
 
@@ -1059,3 +1250,4 @@ img {
     transform: translateY(-8px);
   }
 }
+
