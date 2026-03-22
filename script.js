@@ -156,20 +156,6 @@ const certifications = [
     tags: ['Node.js', 'Backend'],
     href: 'https://www.hackerrank.com/certificates/fdb1c6f85474'
   },
-  {
-    title: 'Cryptography',
-    issuer: 'Coursera',
-    description: 'Explored core concepts behind secure systems and encrypted communication.',
-    tags: ['Security', 'Theory'],
-    href: 'https://www.coursera.org/account/accomplishments/verify/QL2YJEQK67FW'
-  },
-  {
-    title: 'Validate HTML Forms with JavaScript and HTML',
-    issuer: 'Coursera Project Network',
-    description: 'Hands-on practice building more reliable and user-friendly web forms.',
-    tags: ['Forms', 'Validation'],
-    href: 'https://www.coursera.org/account/accomplishments/verify/HPTO5VX3VZRN'
-  }
 ];
 
 const licenses = [
@@ -193,6 +179,20 @@ const licenses = [
     description: 'Explored engineering thinking, technical communication, and real-world industry workflows.',
     tags: ['Engineering', 'Industry'],
     href: 'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ay2tsYxaTif7Nt6z7/pLsGxMKDGpsQWt6zZ_ay2tsYxaTif7Nt6z7_hfbYN5TPTRuWv8fwm_1732453008471_completion_certificate.pdf'
+  },
+  {
+    title: 'Cryptography',
+    issuer: 'Coursera',
+    description: 'Explored core concepts behind secure systems and encrypted communication.',
+    tags: ['Security', 'Theory'],
+    href: 'https://www.coursera.org/account/accomplishments/verify/QL2YJEQK67FW'
+  },
+  {
+    title: 'Validate HTML Forms with JavaScript and HTML',
+    issuer: 'Coursera Project Network',
+    description: 'Hands-on practice building more reliable and user-friendly web forms.',
+    tags: ['Forms', 'Validation'],
+    href: 'https://www.coursera.org/account/accomplishments/verify/HPTO5VX3VZRN'
   }
 ];
 
