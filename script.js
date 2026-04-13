@@ -75,6 +75,17 @@ const projects = [
       { label: 'Resume', href: 'Resume.pdf' },
       { label: 'Hire Me', href: '#contact' }
     ]
+  },
+  {
+    title: 'Personal AI Assistant',
+    status: 'Live Project',
+    description: 'A live AI assistant web project focused on fast interactions, modern UI flow, and practical assistant-style user experience.',
+    tags: ['AI Assistant', 'Web App', 'Interactive UI'],
+    url: 'https://personal-ai-assistant-sepia.vercel.app/',
+    links: [
+      { label: 'Live Demo', href: 'https://personal-ai-assistant-sepia.vercel.app/' },
+      { label: 'GitHub Profile', href: 'https://github.com/PoluSuraj' }
+    ]
   }
 ];
 
