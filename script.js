@@ -56,13 +56,13 @@ const projects = [
   },
   {
     title: 'Excel Analysis Tool',
-    status: 'Completed',
+    status: 'Live Project',
     description: 'A utility-focused project for transforming spreadsheet data into clearer analysis and more useful insights.',
     tags: ['Data Analysis', 'Visualization', 'Productivity'],
-    url: 'https://github.com/PoluSuraj',
+    url: 'https://polusuraj.github.io/Excel-Analysis-Tool/',
     links: [
-      { label: 'GitHub Profile', href: 'https://github.com/PoluSuraj' },
-      { label: 'Discuss Project', href: '#contact' }
+      { label: 'Live Demo', href: 'https://polusuraj.github.io/Excel-Analysis-Tool/' },
+      { label: 'GitHub Repo', href: 'https://github.com/PoluSuraj/Excel-Analysis-Tool' }
     ]
   },
   {
