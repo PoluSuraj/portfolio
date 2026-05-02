@@ -28,6 +28,11 @@ const skills = [
     title: 'Problem Solving and Engineering Practice',
     description: 'Learning fast, debugging carefully, and improving systems through hands-on iteration.',
     level: '84%'
+  },
+  {
+    title: 'Excel',
+    description: 'Working confidently with spreadsheets, structured data, analysis, and practical Excel-based tasks.',
+    level: '98%'
   }
 ];
 
@@ -431,9 +436,17 @@ function updateTime() {
     second: '2-digit'
   });
 
-  liveDate.textContent = dateFormatter.format(now) + ' • ' + timeFormatter.format(now);
-  dateTime.textContent = 'Local time: ' + now.toLocaleString();
-  currentYear.textContent = now.getFullYear();
+  if (liveDate) {
+    liveDate.textContent = dateFormatter.format(now) + ' • ' + timeFormatter.format(now);
+  }
+
+  if (dateTime) {
+    dateTime.textContent = 'Local time: ' + now.toLocaleString();
+  }
+
+  if (currentYear) {
+    currentYear.textContent = now.getFullYear();
+  }
 }
 
 function getHeaderOffset() {
